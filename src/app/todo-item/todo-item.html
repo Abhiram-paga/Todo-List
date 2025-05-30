@@ -1,5 +1,5 @@
 <div *ngFor="let todo of todoList" class="d-flex justify-content-between mb-3 mt-3">
-    <input type="checkbox"/>
+    <input type="checkbox" (change)="onTodoStatusChange($event,todo.id)" [checked]="todo.isStatusDone"/>
     <p [ngClass]="{'taskCompleted':todo.isStatusDone}">{{todo.todoTitle}}</p>
-    <button class="btn btn-danger">Delete</button>
+    <button class="btn btn-danger" (click)="onDeleteTodoItem(todo.id)">Delete</button>
 </div>

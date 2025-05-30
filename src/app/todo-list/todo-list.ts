@@ -20,9 +20,8 @@ export class TodoList {
     
   }
 
-  ngOnInit(){
+  ngDoCheck(){
       this.todoList=this.taskServices.todoList;
-      console.log("Assigned")
   }
 
     todoTitle:string='';

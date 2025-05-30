@@ -17,8 +17,16 @@ export class TodoItem {
   }
 
   todoList:ITodoModel[]=[];
-  ngOnInit(){
+  ngDoCheck(){
      this.todoList=this.taskService.todoList;
+  }
+
+  onDeleteTodoItem(todoId:number){
+    this.taskService.onDeleteTodo(todoId);
+  }
+
+  onTodoStatusChange(event:any,todoId:number){
+      this.taskService.onStatusChange(event,todoId);
   }
  
 }

@@ -37,5 +37,18 @@ export class TodoServices {
   onSaveTodoList(){
       localStorage.setItem('todoList',JSON.stringify(this.todoList));
   }
+  onDeleteTodo(todoId:number){
+      this.todoList=this.todoList.filter((todo:ITodoModel)=>todo.id!==todoId);
+  }
+
+  onStatusChange(event:any,todoId:number){
+    this.todoList=this.todoList.map((eachTodo:ITodoModel)=>{
+      if(eachTodo.id===todoId){
+        return {...eachTodo,isStatusDone:!eachTodo.isStatusDone}
+      }else{
+        return eachTodo;
+      }
+    })
+  }
 
 }
