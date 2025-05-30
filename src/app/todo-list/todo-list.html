@@ -1,1 +1,17 @@
-<p>todo-list works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <input type="text" placeholder="Enter the Task title" [value]="todoTitle" [(ngModel)]="todoTitle"/> 
+        </div>
+        <div class="col-12">
+            <textarea cols="100" rows="10" [(ngModel)]="todoDescription"></textarea>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" (click)="onAddTodo()">Add</button>
+            <button class="btn btn-primary" (click)="onSaveTodo()">Save</button>
+        </div>
+        <div class="col-12">
+            <app-todo-item></app-todo-item>
+        </div>
+    </div>
+</div>
