@@ -4,50 +4,66 @@ import { FormsModule } from '@angular/forms';
 import { ITodoModel } from '../models/todoModel';
 import { TodoItem } from '../todo-item/todo-item';
 import { TodoServices } from '../Services/todo-services';
+import { Route, Routes } from '@angular/router';
+import { Subject, Subscription, takeUntil } from 'rxjs';
+
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [CommonModule,FormsModule,TodoItem],
+  imports: [CommonModule, FormsModule, TodoItem],
   templateUrl: './todo-list.html',
   styleUrl: './todo-list.scss'
 })
 export class TodoList {
-  
 
-  taskServices=inject(TodoServices);
-  constructor(){
-    
+  onAddTodoSubscription?: Subscription; 
+  private destroy$ = new Subject<void>();
+
+  taskServices = inject(TodoServices);
+  constructor() {
+
   }
+  todoTitle: string = '';
 
-  ngDoCheck(){
-      this.todoList=this.taskServices.todoList;
-  }
+  todoDescription: string = '';
 
-    todoTitle:string='';
 
-    todoDescription:string='';
 
-    todoList:ITodoModel[]=[];
-
-   
   onAddTodo() {
-    const newTodo:ITodoModel={
-      id:this.todoList.length+1,
-      todoTitle:this.todoTitle,
-      todoDescription:this.todoDescription,
-      isStatusDone:false
+    if (this.todoTitle === '') {
+      return alert('Enter Title')
     }
-    this.taskServices.onAddTodo(newTodo);
-    // this.todoList.push(newTodo);
-    this.todoTitle='';
-    this.todoDescription='';
+    const newTodo: ITodoModel = {
+      id: crypto.randomUUID(),
+      todoTitle: this.todoTitle,
+      todoDescription: this.todoDescription,
+      isStatusDone: false
+    }
+    this.todoTitle = '';
+    this.todoDescription = '';
 
-      }
-
-
-
-  onSaveTodo(){
-    // localStorage.setItem('todoList',JSON.stringify(this.todoList));
+    // this.taskServices.onAddTodo(newTodo).pipe(takeUntil(this.destroy$)).subscribe(()=>{
+    //   const addedList=[...this.taskServices.behaviorObj.getValue(),newTodo];
+    //   this.taskServices.behaviorObj.next(addedList);
+    // })
+    this.onAddTodoSubscription = this.taskServices.onAddTodo(newTodo).subscribe({
+      next: ((res)=>{
+        this.taskServices.getTodoList().pipe(takeUntil(this.destroy$)).subscribe((todos)=>{
+          this.taskServices.behaviorObj.next(todos);
+        })
+      }),
+      error: ((error)=>{
+        console.error(error)
+      })
+    })
   }
+
+  ngOnDestroy() {
+    if(this.onAddTodoSubscription) {
+      this.onAddTodoSubscription.unsubscribe();
+    }
+  }
+
+
 }

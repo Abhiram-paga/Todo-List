@@ -1,17 +1,14 @@
-<div class="container">
+<div class="fluid-container">
     <div class="row">
         <div class="col-12">
-            <input type="text" placeholder="Enter the Task title" [value]="todoTitle" [(ngModel)]="todoTitle"/> 
+            <input type="text" placeholder="Enter the Task title" [value]="todoTitle" [(ngModel)]="todoTitle" class="input-element"/> 
         </div>
         <div class="col-12">
-            <textarea cols="100" rows="10" [(ngModel)]="todoDescription"></textarea>
+            <textarea cols="40" rows="10" [(ngModel)]="todoDescription" class="text-area-ele"></textarea>
         </div>
         <div class="col-12">
-            <button class="btn btn-primary" (click)="onAddTodo()">Add</button>
-            <button class="btn btn-primary" (click)="onSaveTodo()">Save</button>
+            <button class="button-add" (click)="onAddTodo()">Add</button>
         </div>
-        <div class="col-12">
-            <app-todo-item></app-todo-item>
-        </div>
+        <app-todo-item></app-todo-item>
     </div>
 </div>

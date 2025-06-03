@@ -1,0 +1,28 @@
+.active-link{
+    text-decoration: underline;
+    font-weight: bold;
+    color: green;
+}
+
+.todos-heading {
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.header-links{
+    text-decoration: none;
+    font-family: roboto;
+    font-size: 15px;
+     margin-top: 30px;
+     cursor: pointer;
+    margin-bottom: 20px;
+}
+.header-container{
+    width: 100%;
+    padding: 20px;
+}

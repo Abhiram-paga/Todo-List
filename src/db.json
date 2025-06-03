@@ -1,0 +1,76 @@
+{
+  "todoList": [
+    {
+      "id": "821739e1-6f0d-4327-bc0d-c1bce6a46571",
+      "todoTitle": "Learn Swaroop",
+      "todoDescription": "I wanted to learn Js by monday beacause its very important to learn before switching to Angular ",
+      "isStatusDone": false
+    },
+    {
+      "id": "4ebd3c56-c599-4655-ae2b-50f05f465250",
+      "todoTitle": "Learn js",
+      "todoDescription": "just wanted to style html elements\n",
+      "isStatusDone": false
+    },
+    {
+      "id": "683c2f65-172b-4e3a-bfd5-d1e96818f255",
+      "todoTitle": "Learn Flask",
+      "todoDescription": "I want to learn python library that is flask..",
+      "isStatusDone": false
+    },
+    {
+      "id": "705abe1c-ec1c-41f4-b7b5-3d8fc771c779",
+      "todoTitle": "Learn Reac",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "5bbf7ef9-9b96-4401-86d9-f21a90eb72f9",
+      "todoTitle": "Learn SQL",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "8d44b53f-2e36-4fb8-a42f-737f98e14727",
+      "todoTitle": "Learn Pandas",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "10e8322e-7b96-4b0e-b7a9-1e9a6a40aa1e",
+      "todoTitle": "Learn Css",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "21c56c2b-990e-41fb-9668-05adedc62e49",
+      "todoTitle": "play cricket",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "5803423a-6132-42b7-bb1e-2dc7210b6550",
+      "todoTitle": "Listen music",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "3233c5a7-03e9-4e98-8c9f-c67a7437dccf",
+      "todoTitle": "watch movie",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "d674cd07-22a6-4066-a6c5-bf2340153bb3",
+      "todoTitle": "ground",
+      "todoDescription": "",
+      "isStatusDone": false
+    },
+    {
+      "id": "30896700-7af2-4bc8-8a57-e8a7bcf7a9c2",
+      "todoTitle": "typing",
+      "todoDescription": "",
+      "isStatusDone": false
+    }
+  ]
+}

@@ -1,5 +1,30 @@
-<div *ngFor="let todo of todoList" class="d-flex justify-content-between mb-3 mt-3">
-    <input type="checkbox" (change)="onTodoStatusChange($event,todo.id)" [checked]="todo.isStatusDone"/>
-    <p [ngClass]="{'taskCompleted':todo.isStatusDone}">{{todo.todoTitle}}</p>
+<input type="search" class="m-3 p-2" placeholder='search' [(ngModel)]="searchText" (ngModelChange)="onSearchTextChange()"/>
+
+<div *ngFor="let todo of paginatedTodoList$ | async" class="d-flex justify-content-between mb-3 mt-3 col-12 col-md-6 todo-item-styling">
+    <input type="checkbox" (change)="onTodoStatusChange(todo.id)" [checked]="todo.isStatusDone"/>
+    <p [ngClass]="{'taskCompleted':todo.isStatusDone}" class="mt-2 todo-title todo-item-title">{{todo.todoTitle}}</p>
     <button class="btn btn-danger" (click)="onDeleteTodoItem(todo.id)">Delete</button>
+    <button class="btn btn-primary" [routerLink]="['/todo-edit',todo.id]">Edit</button>
 </div>
+
+
+<!-- Pagination Controls -->
+<nav *ngIf="fullTodoList.length > todosPerPage">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="onPageChange(currentPage - 1)">Previous</a>
+    </li>
+
+    <li
+      class="page-item"
+      *ngFor="let page of totalPages"
+      [class.active]="currentPage === page"
+    >
+      <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
+    </li>
+
+    <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+      <a class="page-link" (click)="onPageChange(currentPage + 1)">Next</a>
+    </li>
+  </ul>
+</nav>
