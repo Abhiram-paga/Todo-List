@@ -3,8 +3,7 @@ import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ITodoModel } from '../models/todoModel';
 import { TodoItem } from '../todo-item/todo-item';
-import { TodoServices } from '../Services/todo-services';
-import { Route, Routes } from '@angular/router';
+import { TodoServices } from '../services/todo-service';
 import { Subject, Subscription, takeUntil } from 'rxjs';
 
 
@@ -17,13 +16,11 @@ import { Subject, Subscription, takeUntil } from 'rxjs';
 })
 export class TodoList {
 
-  onAddTodoSubscription?: Subscription; 
+  onAddTodoSubscription?: Subscription;
   private destroy$ = new Subject<void>();
 
   taskServices = inject(TodoServices);
-  constructor() {
-
-  }
+  
   todoTitle: string = '';
 
   todoDescription: string = '';
@@ -48,19 +45,19 @@ export class TodoList {
     //   this.taskServices.behaviorObj.next(addedList);
     // })
     this.onAddTodoSubscription = this.taskServices.onAddTodo(newTodo).subscribe({
-      next: ((res)=>{
-        this.taskServices.getTodoList().pipe(takeUntil(this.destroy$)).subscribe((todos)=>{
+      next: ((res) => {
+        this.taskServices.getTodoList().pipe(takeUntil(this.destroy$)).subscribe((todos) => {
           this.taskServices.behaviorObj.next(todos);
         })
       }),
-      error: ((error)=>{
+      error: ((error) => {
         console.error(error)
       })
     })
   }
 
   ngOnDestroy() {
-    if(this.onAddTodoSubscription) {
+    if (this.onAddTodoSubscription) {
       this.onAddTodoSubscription.unsubscribe();
     }
   }

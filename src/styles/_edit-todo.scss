@@ -1,0 +1,43 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use 'sass:color';
+
+.edit-task {
+  padding: 2rem;
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid $primary-color;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: $font-family;
+    transition: box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px $primary-color;
+    }
+  }
+
+  &__textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  &__btn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: color.adjust($primary-color);
+    }
+  }
+}

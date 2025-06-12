@@ -1,13 +1,28 @@
-<div class="fluid-container">
-    <div class="row p-3">
-        <div class="col-12 mb-3">
-            <input type="text" placeholder="Enter the Task title" [value]="todoTitle" [(ngModel)]="todoTitle"/> 
-        </div>
-        <div class="col-12">
-            <textarea cols="50" rows="10" [value]="todoDescription" [(ngModel)]="todoDescription"></textarea>
-        </div>
-        <div class="col-12">
-            <button class="btn btn-primary" (click)="onSaveBtnClick()" [routerLink]="['/all-tasks']">Save</button>
-        </div>
+<div class="fluid-container edit-task">
+  <div class="row p-3">
+    <div class="col-12 mb-3">
+      <input
+        type="text"
+        placeholder="Enter the Task title"
+        class="edit-task__input"
+        [(ngModel)]="todoTitle"
+      />
     </div>
+    <div class="col-12 mb-3">
+      <textarea
+        class="edit-task__textarea"
+        [(ngModel)]="todoDescription"
+        placeholder="Enter the Task Description"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <button
+        class="edit-task__btn"
+        (click)="onSaveBtnClick()"
+        [routerLink]="['/all-tasks']"
+      >
+        Save
+      </button>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { TodoServices } from '../Services/todo-services';
+import { TodoServices } from '../services/todo-service';
 import { CommonModule } from '@angular/common';
 
 @Component({

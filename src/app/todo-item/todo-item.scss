@@ -14,6 +14,18 @@
     padding: 10px;
     text-align: center;
 }
+
+.todo-item-styling input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 12px;
+  accent-color: #096f92;
+  border: 2px solid #096f92; 
+  border-radius: 4px; 
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
 .todo-title{
    width: 30%;
 }

@@ -1,10 +1,15 @@
-<div class="fluid-container">
-    <div class="row">
-        <div class="col-12" *ngFor="let eachTodo of todoList$ | async">
-            <div class="d-flex justify-content-between inprogress-tasks-class m-3" *ngIf="eachTodo.isStatusDone===false">
-            <h1 class="m-3 inprogress-tasks-title">{{eachTodo.todoTitle}}</h1>
-            <p class="inprogress-tasks-des">{{eachTodo.todoDescription}}</p>
-            </div>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12" *ngFor="let eachTodo of todoList$ | async">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-start inprogress-tasks-class m-3 p-3 border rounded"
+        *ngIf="!eachTodo.isStatusDone"
+        role="region"
+        aria-label="In-progress task"
+      >
+        <h2 class="inprogress-tasks-title mb-2 mb-md-0">{{ eachTodo.todoTitle }}</h2>
+        <p class="inprogress-tasks-des flex-grow-1 ms-md-4 text-end">{{ eachTodo.todoDescription }}</p>
+      </div>
     </div>
+  </div>
 </div>

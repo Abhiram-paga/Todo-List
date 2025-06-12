@@ -1,0 +1,82 @@
+@use './variables' as *;
+@use 'sass:color';
+
+.todo-item-styling {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
+  border-left: 6px solid $primary-color;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.01);
+    background-color: color.adjust(#e0e7ff, $lightness: 8%);
+  }
+
+  input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    margin-right: 1rem;
+    accent-color: $primary-color;
+  }
+
+  .todo-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $dark;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    max-width: 20%;
+  }
+
+  .todo-description-para {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: $dark;
+    margin: 0 1rem;
+    overflow-wrap: anywhere;
+    text-align: left;
+    max-width: 50%;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+
+    .btn {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .btn-danger {
+      background-color: #e74c3c;
+      border: none;
+
+      &:hover {
+        background-color: color.adjust(#e74c3c, $lightness: -10%);
+      }
+    }
+
+    .btn-primary {
+      background-color: $primary-color;
+      border: none;
+
+      &:hover {
+        background-color: color.adjust($primary-color, $lightness: -10%);
+      }
+    }
+  }
+}
+
+.taskCompleted {
+  text-decoration: line-through;
+  color: $text-light;
+}

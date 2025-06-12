@@ -9,20 +9,11 @@ import { UpperCasePipe } from '@angular/common';
 })
 export class TodoServices {
 
-  //  todoList:any=[{
-  //       id:1,
-  //       todoTitle:'Learn HTML',
-  //       todoDescription:'I want to complete the HTML couse at w3Schools by this sunday.',
-  //       isStatusDone:false
-  //   },{
-  //       id:2,
-  //       todoTitle:'Learn JS',
-  //       todoDescription:'I want to complete the JS couse at w3Schools by this sunday.',
-  //       isStatusDone:false
-  //   }
-  // ];
-
   http:HttpClient=inject(HttpClient);
+  todoList:ITodoModel[]=[];
+    
+  behaviorObj=new BehaviorSubject<ITodoModel[]>([]);
+  todoList$: Observable<ITodoModel[]> = this.behaviorObj.asObservable();
 
 
   constructor(){
@@ -32,24 +23,9 @@ export class TodoServices {
   }
 
 
-  todoList:ITodoModel[]=[];
-    
-
-  behaviorObj=new BehaviorSubject<ITodoModel[]>([]);
-  todoList$: Observable<ITodoModel[]> = this.behaviorObj.asObservable();
-
   
   onAddTodo(newTodo:ITodoModel): Observable<any> {
-    return this.http.post('http://localhost:3000/todoList',newTodo).pipe(
-      map((res)=>{
-        return ({
-          res: res,
-          name: 'swaroop'
-        })
-      }), catchError((err)=>{
-       return err
-      })
-    );
+    return this.http.post('http://localhost:3000/todoList',newTodo);
   }
 
   onDeleteTodo(todoId:string){

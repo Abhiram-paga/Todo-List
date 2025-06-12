@@ -3,43 +3,31 @@
     {
       "id": "821739e1-6f0d-4327-bc0d-c1bce6a46571",
       "todoTitle": "Learn Swaroop",
-      "todoDescription": "I wanted to learn Js by monday beacause its very important to learn before switching to Angular ",
-      "isStatusDone": false
-    },
-    {
-      "id": "4ebd3c56-c599-4655-ae2b-50f05f465250",
-      "todoTitle": "Learn js",
-      "todoDescription": "just wanted to style html elements\n",
-      "isStatusDone": false
+      "todoDescription": "I wanted to learn Js by monday beacause its very important to learn before switching to java",
+      "isStatusDone": true
     },
     {
       "id": "683c2f65-172b-4e3a-bfd5-d1e96818f255",
       "todoTitle": "Learn Flask",
-      "todoDescription": "I want to learn python library that is flask..",
-      "isStatusDone": false
-    },
-    {
-      "id": "705abe1c-ec1c-41f4-b7b5-3d8fc771c779",
-      "todoTitle": "Learn Reac",
-      "todoDescription": "",
+      "todoDescription": "Flask is a lightweight and flexible micro web framework for Python. It's known for its simplicity and ease of use, making it ideal for building web applications and APIs. Unlike more comprehensive frameworks like Django, Flask provides the core functionality needed for web development",
       "isStatusDone": false
     },
     {
       "id": "5bbf7ef9-9b96-4401-86d9-f21a90eb72f9",
       "todoTitle": "Learn SQL",
-      "todoDescription": "",
+      "todoDescription": "Learn it by this sunday.Flask is a lightweight and flexible micro web framework for Python. It's known for its simplicity and ease of use, making it ideal for",
       "isStatusDone": false
     },
     {
       "id": "8d44b53f-2e36-4fb8-a42f-737f98e14727",
       "todoTitle": "Learn Pandas",
-      "todoDescription": "",
+      "todoDescription": "Flask is a lightweight and flexible micro web framework for Python. It's known for its simplicity and ease of use, making it ideal for building web applications and APIs. Unlike more comprehensive frameworks like Django, Flask provides the core functionality needed for web development",
       "isStatusDone": false
     },
     {
       "id": "10e8322e-7b96-4b0e-b7a9-1e9a6a40aa1e",
       "todoTitle": "Learn Css",
-      "todoDescription": "",
+      "todoDescription": "Css is a lightweight and flexible micro web framework for Python. It's known for its simplicity and ease of use, making it ideal for building web applications and APIs. Unlike more comprehensive frameworks like Django, Flask provides the core functionality needed for web development",
       "isStatusDone": false
     },
     {
@@ -61,15 +49,39 @@
       "isStatusDone": false
     },
     {
-      "id": "d674cd07-22a6-4066-a6c5-bf2340153bb3",
-      "todoTitle": "ground",
+      "id": "30896700-7af2-4bc8-8a57-e8a7bcf7a9c2",
+      "todoTitle": "typing",
       "todoDescription": "",
       "isStatusDone": false
     },
     {
-      "id": "30896700-7af2-4bc8-8a57-e8a7bcf7a9c2",
-      "todoTitle": "typing",
-      "todoDescription": "",
+      "id": "ed7d204a-afa1-495c-aeba-00cb0d7485bd",
+      "todoTitle": "go to Hospital",
+      "todoDescription": "I want check up my theth",
+      "isStatusDone": true
+    },
+    {
+      "id": "48017b04-bc38-4f2f-b95a-3e267abbbcb0",
+      "todoTitle": "learn js",
+      "todoDescription": "adadf",
+      "isStatusDone": true
+    },
+    {
+      "id": "96c83db3-7733-4464-90e5-472b5dfb4120",
+      "todoTitle": "write",
+      "todoDescription": "hand writing",
+      "isStatusDone": false
+    },
+    {
+      "id": "9890d92c-2b5d-4d36-b800-b32851f34706",
+      "todoTitle": "Learn C#",
+      "todoDescription": "I want to learn c#.",
+      "isStatusDone": false
+    },
+    {
+      "id": "364acbfa-bfb4-497d-b2a0-1d81c82dce0b",
+      "todoTitle": "Boxinga",
+      "todoDescription": "Want to do boxing for a while.",
       "isStatusDone": false
     }
   ]

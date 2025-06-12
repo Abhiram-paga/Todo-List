@@ -1,16 +1,50 @@
-<input type="search" class="m-3 p-2" placeholder='search' [(ngModel)]="searchText" (ngModelChange)="onSearchTextChange()"/>
+<!-- Search Section -->
+<input
+  id="search"
+  type="search"
+  class="form-control m-3 p-2 w-50"
+  placeholder="Search tasks by title"
+  [(ngModel)]="searchText"
+  (ngModelChange)="onSearchTextChange()"
+/>
 
-<div *ngFor="let todo of paginatedTodoList$ | async" class="d-flex justify-content-between mb-3 mt-3 col-12 col-md-6 todo-item-styling">
-    <input type="checkbox" (change)="onTodoStatusChange(todo.id)" [checked]="todo.isStatusDone"/>
-    <p [ngClass]="{'taskCompleted':todo.isStatusDone}" class="mt-2 todo-title todo-item-title">{{todo.todoTitle}}</p>
-    <button class="btn btn-danger" (click)="onDeleteTodoItem(todo.id)">Delete</button>
-    <button class="btn btn-primary" [routerLink]="['/todo-edit',todo.id]">Edit</button>
+<!-- Todo List Display -->
+<div
+  *ngFor="let todo of paginatedTodoList$ | async"
+  class="d-flex justify-content-between align-items-center mb-3 mt-3 col-12 col-md-6 todo-item-styling"
+>
+  <input
+    type="checkbox"
+    (change)="onTodoStatusChange(todo.id)"
+    [checked]="todo.isStatusDone"
+    class="form-check-input"
+    aria-label="Mark task as completed"
+  />
+  <p
+    [ngClass]="{ 'taskCompleted': todo.isStatusDone }"
+    class="mt-2 todo-title todo-item-title text-start"
+  >
+    {{ todo.todoTitle }}
+  </p>
+  <p class="todo-description-para">
+    {{todo.todoDescription}}
+  </p>
+  <div class="btn-group">
+    <button class="btn btn-sm btn-danger" (click)="onDeleteTodoItem(todo.id)">
+      Delete
+    </button>
+    <button
+      class="btn btn-sm btn-primary"
+      [routerLink]="['/todo-edit', todo.id]"
+    >
+      Edit
+    </button>
+  </div>
 </div>
-
 
 <!-- Pagination Controls -->
 <nav *ngIf="fullTodoList.length > todosPerPage">
-  <ul class="pagination">
+  <ul class="pagination justify-content-center">
     <li class="page-item" [class.disabled]="currentPage === 1">
       <a class="page-link" (click)="onPageChange(currentPage - 1)">Previous</a>
     </li>

@@ -1,0 +1,9 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.pagination{
+    &-container{
+        justify-content: center;
+        margin: $spacing-lg 0;
+    }
+}
