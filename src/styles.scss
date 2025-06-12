@@ -1,6 +1,7 @@
 
 @use './styles/main' as *;
 /* You can add global styles to this file, and also import other style files */
-*{
-    font-family: roboto;
+/* styles.scss */
+body {
+  font-family: 'Roboto', sans-serif;
 }
